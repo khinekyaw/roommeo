@@ -48,6 +48,7 @@ const Rooms = () => {
             <RoomCard key={room.id} {...room} />
           ))}
         </div>
+
         <Pagination
           variant='bordered'
           color='secondary'

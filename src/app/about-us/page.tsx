@@ -1,8 +1,9 @@
-import Layout from '@/components/Layout'
 import React from 'react'
 
+import Section from '@/components/Section'
+
 const AboutUs = () => {
-  return <Layout>About Us</Layout>
+  return <Section>About Us</Section>
 }
 
 export default AboutUs

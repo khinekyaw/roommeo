@@ -1,19 +1,15 @@
-import React, { ComponentProps, FC } from 'react'
-import { Inter } from 'next/font/google'
-import cn from 'clsx'
+import React, { ReactNode } from 'react'
 
 import Navbar from './Navbar'
 import Footer from './Footer'
 
-const inter = Inter({ subsets: ['latin'] })
-
-const Layout: FC<ComponentProps<'main'>> = ({ children }) => {
+const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <main className={cn(inter.className, 'bg-coral-50')}>
+    <>
       <Navbar />
-      {children}
+      <main>{children}</main>
       <Footer />
-    </main>
+    </>
   )
 }
 

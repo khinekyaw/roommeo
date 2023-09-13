@@ -1,5 +1,5 @@
-import Image from 'next/image'
+import Section from '@/components/Section'
 
 export default function Home() {
-  return <main>Next</main>
+  return <Section>Home Page</Section>
 }

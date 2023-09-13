@@ -1,9 +1,9 @@
 import React, { FC } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Button } from '@nextui-org/button'
 import { Card, CardBody, CardFooter } from '@nextui-org/card'
-import { Link } from '@nextui-org/link'
 
 import { MdLocationPin } from 'react-icons/md'
 

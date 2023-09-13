@@ -1,17 +1,19 @@
 'use client'
 import React from 'react'
+import Link from 'next/link'
 import {
   Navbar as NextNavbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
-  Button,
-} from '@nextui-org/react'
+} from '@nextui-org/navbar'
+import { Button } from '@nextui-org/button'
+
 import { usePathname } from 'next/navigation'
 
 export default function Navbar() {
   const pathname = usePathname()
+
   return (
     <NextNavbar
       classNames={{
@@ -21,7 +23,7 @@ export default function Navbar() {
       <NavbarBrand>
         <Link href='/' className='font-bold'>
           <span className='text-gray-900'>ROOM</span>
-          Live
+          Lef
         </Link>
       </NavbarBrand>
       <NavbarContent className='hidden sm:flex gap-4' justify='center'>

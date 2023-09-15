@@ -24,7 +24,7 @@ const RoomCard: FC<RoomCardProps> = ({
   image,
 }) => {
   return (
-    <Card shadow='none' className='border-1 border-coral-100'>
+    <Card shadow='none' className='border-1 border-gray-200'>
       <CardBody className='overflow-visible p-0 w-full aspect-[2/1.4]'>
         <Image
           width={200}

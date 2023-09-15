@@ -9,6 +9,7 @@ import {
 import { Button } from '@nextui-org/button'
 
 import NavLink from './NavLink'
+import Logo from './Logo'
 
 export default function Navbar() {
   return (
@@ -19,8 +20,7 @@ export default function Navbar() {
     >
       <NavbarBrand>
         <Link href='/' className='font-bold'>
-          <span className='text-gray-900'>ROOM</span>
-          Lef
+          <Logo />
         </Link>
       </NavbarBrand>
       <NavbarContent className='hidden sm:flex gap-4' justify='center'>

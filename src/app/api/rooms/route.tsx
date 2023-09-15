@@ -5,7 +5,7 @@ export function GET(request: NextRequest) {
     {
       id: '1',
       slug: 'room-1',
-      title: 'A room near downtown',
+      title: 'Room to share',
       location: '123/abc Hlaing, Yangon',
       price: 200000,
       image: '/images/1.webp',

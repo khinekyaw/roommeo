@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { Image as NextUiImage } from '@nextui-org/image'
 import { Button } from '@nextui-org/button'
 import { Card, CardBody, CardFooter } from '@nextui-org/card'
 
@@ -26,7 +27,10 @@ const RoomCard: FC<RoomCardProps> = ({
   return (
     <Card shadow='none' className='border-1 border-gray-200'>
       <CardBody className='overflow-visible p-0 w-full aspect-[2/1.4]'>
-        <Image
+        <NextUiImage
+          as={Image}
+          radius='none'
+          removeWrapper={true}
           width={200}
           height={200}
           alt={title}

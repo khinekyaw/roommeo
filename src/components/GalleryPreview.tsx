@@ -22,6 +22,14 @@ const photos: Photo[] = [
     id: '4',
     src: '/images/4.webp',
   },
+  {
+    id: '5',
+    src: '/images/1.webp',
+  },
+  {
+    id: '6',
+    src: '/images/2.webp',
+  },
 ]
 
 const GalleryPreview = () => {

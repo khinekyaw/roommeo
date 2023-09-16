@@ -1,24 +1,17 @@
 'use client'
-import React from 'react'
-import Link from 'next/link'
+import React, { useEffect } from 'react'
 import { Button } from '@nextui-org/button'
 
+import { Modal, ModalContent, ModalBody } from '@nextui-org/modal'
+import { useQueryState } from 'next-usequerystate'
 import PhotoAlbum from 'react-photo-album'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  useDisclosure,
-} from '@nextui-org/modal'
 import { TbGridDots } from 'react-icons/tb'
 
 import NextJsImage from './next/NextJsImage'
 import { GALLERY } from '@/lib/constants'
 import Section from './Section'
 import PhotoView from './PhotoView'
+import { setScroll } from '@/lib/utils'
 
 export interface Photo {
   id: string
@@ -26,11 +19,12 @@ export interface Photo {
 }
 
 const Gallery = ({ photos }: { photos: Photo[] }) => {
-  const pathname = usePathname()
-  const router = useRouter()
-  const searchParams = useSearchParams()
-  const modal = searchParams.get('modal')
-  const modalPath = `${pathname}?modal=${GALLERY}`
+  const [modal, setModal] = useQueryState('modal')
+  const [modalItem, setModalItem] = useQueryState('modalitem')
+
+  useEffect(() => {
+    setScroll(modal ? 'hidden' : 'unset')
+  }, [modal])
 
   const alblumPhotos = photos.map((photo) => ({
     ...photo,
@@ -41,10 +35,9 @@ const Gallery = ({ photos }: { photos: Photo[] }) => {
   return (
     <div>
       <Button
-        as={Link}
         variant='faded'
         size='sm'
-        href={modalPath}
+        onPress={() => setModal(GALLERY)}
         startContent={<TbGridDots />}
       >
         Show all photos
@@ -52,14 +45,14 @@ const Gallery = ({ photos }: { photos: Photo[] }) => {
 
       <Modal
         size='full'
+        scrollBehavior='inside'
         isOpen={modal === GALLERY}
         isDismissable={false}
         onClose={() => {
-          // console.log('close whole model')
-          router.push(`${pathname}`)
+          setModal(null)
         }}
       >
-        <ModalContent>
+        <ModalContent className='min-h-screen'>
           {(onClose) => (
             <>
               <ModalBody className='py-20'>
@@ -70,9 +63,7 @@ const Gallery = ({ photos }: { photos: Photo[] }) => {
                     renderPhoto={NextJsImage}
                     defaultContainerWidth={1200}
                     sizes={{ size: 'calc(100vw - 240px)' }}
-                    onClick={({ index }) =>
-                      router.push(`${modalPath}&modalitem=${index}`)
-                    }
+                    onClick={({ index }) => setModalItem(`${index}`)}
                   />
                 </Section>
               </ModalBody>

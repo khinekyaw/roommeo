@@ -1,12 +1,11 @@
 'use client'
 import React from 'react'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { Button } from '@nextui-org/button'
 import { IoClose } from 'react-icons/io5'
+import { useQueryState } from 'next-usequerystate'
 
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
-import { GALLERY } from '@/lib/constants'
 
 export interface Photo {
   id: string
@@ -14,22 +13,13 @@ export interface Photo {
 }
 
 const PhotoView = ({ photos }: { photos: Photo[] }) => {
-  const pathname = usePathname()
-  const router = useRouter()
-  const searchParams = useSearchParams()
-  const modal = searchParams.get('modal') || ''
-  const id = searchParams.get('modalitem') || ''
-  const modelPath = `${pathname}?modal=${GALLERY}`
-
-  const onClose = () => {
-    router.push(modelPath)
-  }
+  const [modal, setModal] = useQueryState('modal')
+  const [modalItem, setModalItem] = useQueryState('modalitem')
 
   return (
     <Lightbox
-      index={parseInt(id)}
-      open={Boolean(modal && id)}
-      close={onClose}
+      index={modalItem ? parseInt(modalItem) : 0}
+      open={Boolean(modal && modalItem)}
       slides={photos}
       className='z-[990]'
       toolbar={{
@@ -40,8 +30,8 @@ const PhotoView = ({ photos }: { photos: Photo[] }) => {
             variant='solid'
             color='secondary'
             aria-label='Close photo'
-            className='text-2xl'
-            onPress={onClose}
+            className='text-xl'
+            onPress={() => setModalItem(null)}
           >
             <IoClose />
           </Button>,
@@ -49,8 +39,7 @@ const PhotoView = ({ photos }: { photos: Photo[] }) => {
       }}
       on={{
         view: ({ index }) => {
-          // console.log(index)
-          router.replace(`${modelPath}&modalitem=${index}`)
+          setModalItem(`${index}`)
         },
       }}
     />

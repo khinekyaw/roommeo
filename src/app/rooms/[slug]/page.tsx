@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 
 import Section from '@/components/Section'
 import GalleryPreview from '@/components/GalleryPreview'
+import PhotoView from '@/components/PhotoView'
 
 interface RoomDetailProps {
   params: { slug: string }

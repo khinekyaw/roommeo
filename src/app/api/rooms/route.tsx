@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 export function GET(request: NextRequest) {
+  console.log('->hit fetch room-list')
+
   return NextResponse.json([
     {
       id: '1',

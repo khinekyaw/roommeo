@@ -3,7 +3,7 @@ import React from 'react'
 import { Image as NextUiImage } from '@nextui-org/image'
 
 import cn from 'clsx'
-import PhotoGrid, { Photo } from './PhotoGrid'
+import Gallery, { Photo } from './Gallery'
 
 const photos: Photo[] = [
   {
@@ -18,6 +18,10 @@ const photos: Photo[] = [
     id: '3',
     src: '/images/3.webp',
   },
+  {
+    id: '4',
+    src: '/images/4.webp',
+  },
 ]
 
 const GalleryPreview = () => {
@@ -30,9 +34,13 @@ const GalleryPreview = () => {
           <div
             key={photo.id}
             className={cn(
-              index === 0 ? 'row-span-full' : 'col-span-4',
-              photoLength === 1 && index === 0 ? 'col-span-full' : 'col-span-8',
-              photoLength === 2 && index > 0 && 'row-span-full'
+              index === 0
+                ? photoLength > 1
+                  ? 'row-span-full col-span-8'
+                  : 'row-span-full col-span-12'
+                : null,
+              index > 0 && 'col-span-4',
+              index > 0 && photoLength === 2 && 'row-span-full'
             )}
           >
             <NextUiImage
@@ -50,7 +58,7 @@ const GalleryPreview = () => {
       </div>
       {photoLength > 1 ? (
         <div className='absolute right-3 bottom-3 z-10'>
-          <PhotoGrid photos={photos} />
+          <Gallery photos={photos} />
         </div>
       ) : null}
     </div>

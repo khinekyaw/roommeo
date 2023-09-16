@@ -1,22 +1,36 @@
-import React, { FC } from 'react'
+import React from 'react'
 
 import Section from '@/components/Section'
 import GalleryPreview from '@/components/GalleryPreview'
-import PhotoView from '@/components/PhotoView'
+import RoomSidebar from '@/components/RoomSidebar'
+import RoomDetail from '@/components/RoomDetail'
+import Amenities from '@/components/Amenities'
+import LatestRooms from '@/components/LatestRooms'
 
-interface RoomDetailProps {
+interface Props {
   params: { slug: string }
 }
 
-const RoomDetail: FC<RoomDetailProps> = ({ params: { slug } }) => {
+const RoomDetailPage = ({ params: { slug } }: Props) => {
   return (
     <Section>
       <div className='py-8'>
-        <GalleryPreview />
+        <div className='mb-8'>
+          <GalleryPreview />
+        </div>
+        <div className='flex gap-7 mb-12'>
+          <div className='flex-1 flex flex-col gap-7'>
+            <RoomDetail />
+            <Amenities />
+          </div>
+          <aside className='min-w-[15rem] flex-[0.5]'>
+            <RoomSidebar />
+          </aside>
+        </div>
+        <LatestRooms />
       </div>
-      <div>RoomDetail - {slug}</div>
     </Section>
   )
 }
 
-export default RoomDetail
+export default RoomDetailPage

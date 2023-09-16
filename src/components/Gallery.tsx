@@ -51,6 +51,9 @@ const Gallery = ({ photos }: { photos: Photo[] }) => {
         onClose={() => {
           setModal(null)
         }}
+        classNames={{
+          closeButton: 'right-8 top-4 text-xl',
+        }}
       >
         <ModalContent className='min-h-screen'>
           {(onClose) => (

@@ -7,6 +7,12 @@ import { Button } from '@nextui-org/button'
 import { Card, CardBody, CardFooter } from '@nextui-org/card'
 
 import { MdLocationPin } from 'react-icons/md'
+import {
+  PiShowerFill,
+  PiBedFill,
+  PiHouseFill,
+  PiGenderIntersexBold,
+} from 'react-icons/pi'
 
 export interface RoomCardProps {
   id: string
@@ -40,11 +46,37 @@ const RoomCard: FC<RoomCardProps> = ({
         />
       </CardBody>
       <CardFooter className='p-5'>
-        <div className='w-full'>
-          <div className='mb-4'>{title}</div>
-          <div className='w-full flex items-center gap-x-2 mb-6'>
+        <div className='flex flex-col gap-5 w-full'>
+          {/* <div className='mb-4'>{title}</div> */}
+          <div className='w-full flex items-center gap-x-2'>
             <MdLocationPin className='text-2xl' />
-            <p>{location}</p>
+            <p className='font-semibold'>{location}</p>
+          </div>
+          <div className='grid gap-4 grid-cols-2 grid-rows-2 text-gray-700'>
+            <div className='flex items-center gap-2'>
+              <span className='text-lg'>
+                <PiHouseFill />
+              </span>
+              <p>House</p>
+            </div>
+            <div className='flex items-center gap-2'>
+              <span className='text-lg'>
+                <PiGenderIntersexBold />
+              </span>
+              <p>Any</p>
+            </div>
+            <div className='flex items-center gap-2'>
+              <span className='text-lg'>
+                <PiShowerFill />
+              </span>
+              <p>2 Bath</p>
+            </div>
+            <div className='flex items-center gap-2'>
+              <span className='text-lg'>
+                <PiBedFill />
+              </span>
+              <p>1 Bed Room</p>
+            </div>
           </div>
           <div className='flex w-full justify-between items-center'>
             <Button as={Link} href={`/rooms/${slug}`} color='secondary'>

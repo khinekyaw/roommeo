@@ -3,3 +3,4 @@
 - RoomList
 - RoomFilter?
 - GalleryPreview
+- LatestRooms

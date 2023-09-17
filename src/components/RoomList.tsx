@@ -3,9 +3,10 @@ import React from 'react'
 import RoomCard, { RoomCardProps } from './RoomCard'
 
 import { getAll } from '@/lib/fetch/rooms'
+import { buildQueryString } from '@/lib/utils'
 
-const RoomList = async (props: any) => {
-  const rooms: RoomCardProps[] = await getAll()
+const RoomList = async ({ searchParams }: { searchParams: any }) => {
+  const rooms: RoomCardProps[] = await getAll(buildQueryString(searchParams))
 
   return (
     <div className='grid grid-cols-3 gap-6'>

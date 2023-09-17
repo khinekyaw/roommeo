@@ -7,19 +7,25 @@ import Section from '@/components/Section'
 
 import RoomList from '@/components/RoomList'
 
-const Rooms = () => {
+const Rooms = ({
+  params,
+  searchParams,
+}: {
+  params: { slug: string }
+  searchParams?: { [key: string]: string | string[] | undefined }
+}) => {
   return (
     <Section>
       <div className='pt-12 pb-12 min-h-screen'>
-        <h1 className='font-bold text-4xl mb-4'>Find a Room</h1>
+        <h1 className='font-bold text-4xl mb-7'>Find a Room</h1>
 
-        <div className='mb-10'>
-          <RoomFilter />
+        <div className='mb-12'>
+          <RoomFilter searchParams={searchParams} />
         </div>
 
         <div className='mb-12'>
           <Suspense fallback={<p>Loading...</p>}>
-            <RoomList />
+            <RoomList searchParams={searchParams} />
           </Suspense>
         </div>
 

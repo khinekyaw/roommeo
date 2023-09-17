@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import NextTopLoader from 'nextjs-toploader'
 
 import { Providers } from './providers'
 import Layout from '../components/Layout'
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
+        <NextTopLoader color={'#ff8b46'} showSpinner={false} />
         <Providers>
           <Layout>{children}</Layout>
         </Providers>

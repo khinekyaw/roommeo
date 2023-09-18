@@ -12,7 +12,7 @@ const RoomCreatePage = () => {
       <div className='py-10'>
         <Card className='p-3 border' shadow='none'>
           <CardHeader className='px-5'>
-            <h1 className='font-bold text-3xl'>Lift your room</h1>
+            <h1 className='font-bold text-2xl'>List your room</h1>
           </CardHeader>
           <CardBody>
             <div className='mb-5'>
@@ -24,14 +24,12 @@ const RoomCreatePage = () => {
                   variant='bordered'
                   type='text'
                   label='Title'
-                  defaultValue=''
                   className='bg-white'
                 />
                 <Input
                   variant='bordered'
                   type='text'
                   label='Price'
-                  defaultValue=''
                   className='bg-white'
                 />
               </div>

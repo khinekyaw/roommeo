@@ -1,60 +1,16 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { usePathname, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 import { Input } from '@nextui-org/input'
 import { Button } from '@nextui-org/button'
 import { Select, SelectItem } from '@nextui-org/select'
 import { useForm } from 'react-hook-form'
-
 import { IoSearch } from 'react-icons/io5'
-import { buildQueryString } from '@/lib/utils'
 import _ from 'lodash'
 
-const cities = [
-  {
-    value: 'yangon',
-    label: 'Yangon',
-  },
-  {
-    value: 'mandalay',
-    label: 'Mandalay',
-  },
-  {
-    value: 'bago',
-    label: 'Bago',
-  },
-]
-
-const prices = [
-  {
-    value: '100000',
-    label: '1Lakhs',
-  },
-  {
-    value: '200000',
-    label: '2Lakhs',
-  },
-  {
-    value: '300000',
-    label: '3Lakhs',
-  },
-]
-
-const properties = [
-  {
-    value: 'apartment',
-    label: 'Apartment',
-  },
-  {
-    value: 'condo',
-    label: 'Condo',
-  },
-  {
-    value: 'house',
-    label: 'House',
-  },
-]
+import { buildQueryString } from '@/lib/utils'
+import { CITIES, PRICES, PROPERTY_TYPES } from '@/data/inputs'
 
 const RoomFilter = ({ searchParams }: { searchParams: any }) => {
   const router = useRouter()
@@ -107,7 +63,7 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           color='secondary'
           {...register('city')}
         >
-          {cities.map((city) => (
+          {CITIES.map((city) => (
             <SelectItem key={city.value} value={city.value}>
               {city.label}
             </SelectItem>
@@ -121,7 +77,7 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           color='secondary'
           {...register('township')}
         >
-          {cities.map((city) => (
+          {CITIES.map((city) => (
             <SelectItem key={city.value} value={city.value}>
               {city.label}
             </SelectItem>
@@ -135,7 +91,7 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           color='secondary'
           {...register('property_type')}
         >
-          {properties.map((property) => (
+          {PROPERTY_TYPES.map((property) => (
             <SelectItem key={property.value} value={property.value}>
               {property.label}
             </SelectItem>
@@ -149,7 +105,7 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           color='secondary'
           {...register('price_from')}
         >
-          {prices.map((price) => (
+          {PRICES.map((price) => (
             <SelectItem key={price.value} value={price.value}>
               {price.label}
             </SelectItem>
@@ -163,7 +119,7 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           color='secondary'
           {...register('price_to')}
         >
-          {prices.map((price) => (
+          {PRICES.map((price) => (
             <SelectItem key={price.value} value={price.value}>
               {price.label}
             </SelectItem>

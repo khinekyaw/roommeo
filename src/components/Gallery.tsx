@@ -19,8 +19,10 @@ export interface Photo {
 }
 
 const Gallery = ({ photos }: { photos: Photo[] }) => {
-  const [modal, setModal] = useQueryState('modal')
-  const [modalItem, setModalItem] = useQueryState('modalitem')
+  const [modal, setModal] = useQueryState('modal', { history: 'push' })
+  const [modalItem, setModalItem] = useQueryState('modalitem', {
+    history: 'push',
+  })
 
   useEffect(() => {
     setScroll(modal ? 'hidden' : 'unset')

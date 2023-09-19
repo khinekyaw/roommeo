@@ -18,7 +18,7 @@ const RoomDetailPage = ({ params: { slug } }: Props) => {
         <div className='mb-8'>
           <GalleryPreview />
         </div>
-        <div className='flex gap-7 mb-12'>
+        <div className='flex flex-col lg:flex-row gap-7 mb-12'>
           <div className='flex-1 flex flex-col gap-7'>
             <RoomDetail />
             <Amenities />

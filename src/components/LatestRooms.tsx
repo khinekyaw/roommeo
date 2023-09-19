@@ -12,7 +12,9 @@ const LatestRooms = async () => {
   return (
     <div>
       <div className='flex justify-between'>
-        <h5 className='font-bold text-2xl mb-8'>Latest Room Listings</h5>
+        <h5 className='font-bold text-lg lg:text-2xl mb-8'>
+          Latest Room Listings
+        </h5>
         <Button
           as={Link}
           variant='light'
@@ -23,7 +25,7 @@ const LatestRooms = async () => {
           View All
         </Button>
       </div>
-      <div className='grid grid-cols-3 gap-6'>
+      <div className='grid lg:grid-cols-3 gap-6'>
         {rooms.slice(0, 3).map((room) => (
           <RoomCard key={room.id} {...room} />
         ))}

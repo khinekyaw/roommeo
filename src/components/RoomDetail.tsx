@@ -10,7 +10,7 @@ import { Divider } from '@nextui-org/divider'
 const RoomDetail = () => {
   return (
     <Card
-      className='border border-gray-200 p-5'
+      className='border border-gray-200 p-3 lg:p-5'
       classNames={{
         header: 'pb-0',
       }}
@@ -18,7 +18,7 @@ const RoomDetail = () => {
     >
       <CardHeader className='mb-5'>
         <div className='flex flex-col'>
-          <h1 className='font-bold text-3xl/normal mb-3'>
+          <h1 className='font-bold text-xl lg:text-3xl/normal mb-3'>
             Trovilla Plan in Sereno Canyon - Estate Collection by Toll Brothers
           </h1>
           <h2 className='font-semibold text-lg'>

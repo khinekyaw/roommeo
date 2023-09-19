@@ -82,7 +82,9 @@ const RoomCard: FC<RoomCardProps> = ({
             <Button as={Link} href={`/rooms/${slug}`} color='secondary'>
               View Detail
             </Button>
-            <p className='text-xl font-bold'>Ks{numberWithCommas(price)}</p>
+            <p className='text-lg lg:text-xl font-bold'>
+              Ks{numberWithCommas(price)}
+            </p>
           </div>
         </div>
       </CardFooter>

@@ -43,7 +43,7 @@ const Amenities = () => {
     <Card className='border border-gray-200 p-5' shadow='none'>
       <CardHeader>
         <div>
-          <h4 className='font-bold text-2xl mb-5'>Amenities</h4>
+          <h4 className='font-bold text-xl lg:text-2xl mb-5'>Amenities</h4>
           <div className='flex gap-3 flex-wrap'>
             {amenitites.map((amenity) => (
               <Button

@@ -36,19 +36,19 @@ const GalleryPreview = () => {
   const photoLength = photos.length
 
   return (
-    <div className='w-full aspect-[2.4/1] relative'>
-      <div className='relative grid gap-5 w-full h-full grid-cols-12 grid-rows-2'>
+    <div className='w-full aspect-square lg:aspect-[2.4/1] relative'>
+      <div className='relative grid gap-3 lg:gap-5 w-full h-full grid-cols-12 grid-rows-2'>
         {photos.slice(0, 3).map((photo, index) => (
           <div
             key={photo.id}
             className={cn(
               index === 0
                 ? photoLength > 1
-                  ? 'row-span-full col-span-8'
-                  : 'row-span-full col-span-12'
+                  ? 'lg:row-span-full row-span-1 lg:col-span-8 col-span-12'
+                  : 'row-span-full lg:col-span-12'
                 : null,
-              index > 0 && 'col-span-4',
-              index > 0 && photoLength === 2 && 'row-span-full'
+              index > 0 && 'lg:col-span-4 col-span-6 row-span-1',
+              index > 0 && photoLength === 2 && 'lg:row-span-full'
             )}
           >
             <NextUiImage

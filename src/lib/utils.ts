@@ -13,3 +13,7 @@ export function buildQueryString(params: any) {
     .map((k) => esc(k) + '=' + esc(params[k]))
     .join('&')
 }
+
+export const numberWithCommas = (x: number) => {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+}

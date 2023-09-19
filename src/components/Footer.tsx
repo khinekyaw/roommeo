@@ -12,9 +12,9 @@ import Logo from './Logo'
 
 const Footer = () => {
   return (
-    <footer className='bg-white w-full pt-32'>
+    <footer className='bg-white w-full pt-20 lg:pt-32'>
       <Section>
-        <div className='flex w-full gap-8 mb-10'>
+        <div className='flex w-full lg:flex-row flex-col gap-8 mb-10'>
           <div className='flex-[1.6] font-semibold'>
             <div className='mb-8'>
               <Logo />

@@ -13,6 +13,7 @@ import {
   PiHouseFill,
   PiGenderIntersexBold,
 } from 'react-icons/pi'
+import { numberWithCommas } from '@/lib/utils'
 
 export interface RoomCardProps {
   id: string
@@ -47,7 +48,6 @@ const RoomCard: FC<RoomCardProps> = ({
       </CardBody>
       <CardFooter className='p-5'>
         <div className='flex flex-col gap-5 w-full'>
-          {/* <div className='mb-4'>{title}</div> */}
           <div className='w-full flex items-center gap-x-2'>
             <MdLocationPin className='text-2xl' />
             <p className='font-semibold'>{location}</p>
@@ -82,7 +82,7 @@ const RoomCard: FC<RoomCardProps> = ({
             <Button as={Link} href={`/rooms/${slug}`} color='secondary'>
               View Detail
             </Button>
-            <p className='text-xl font-bold'>Ks{price}</p>
+            <p className='text-xl font-bold'>Ks{numberWithCommas(price)}</p>
           </div>
         </div>
       </CardFooter>

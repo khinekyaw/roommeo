@@ -11,7 +11,7 @@ const Newsletter = () => {
     <div className='bg-[#161616] py-20'>
       <Section>
         <div className='flex justify-center'>
-          <Card className='p-5 bg-white/60 w-full max-w-3xl'>
+          <Card className='lg:p-5 bg-white/60 w-full max-w-3xl'>
             <CardBody className='flex items-center'>
               <div className='max-w-lg flex flex-col items-center'>
                 <h3 className='text-3xl font-bold text-center mb-5'>
@@ -21,7 +21,7 @@ const Newsletter = () => {
                   We helps businesses customize, automate and scale up their ad
                   production and delivery.
                 </p>
-                <div className='flex gap-2'>
+                <div className='flex flex-col lg:flex-row gap-2'>
                   <Input size='lg' placeholder='Enter your email' />
                   <Button size='lg' color='secondary'>
                     Subscribe

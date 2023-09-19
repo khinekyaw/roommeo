@@ -13,20 +13,20 @@ const FeaturedRooms = async () => {
 
   return (
     <Section>
-      <div className='py-16'>
+      <div className='pt-16 mb-20'>
         <div className='flex justify-between mb-8'>
-          <h5 className='font-bold text-3xl'>Featured Rooms</h5>
+          <h5 className='font-bold text-xl lg:text-3xl'>Featured Rooms</h5>
           <Button
             as={Link}
             variant='light'
             color='primary'
             endContent={<IoArrowForward />}
-            href='/rooms?filter=latest'
+            href='/rooms?filter=featured'
           >
             View All
           </Button>
         </div>
-        <div className='grid grid-cols-3 gap-6'>
+        <div className='grid lg:grid-cols-3 gap-6'>
           {rooms.slice(0, 3).map((room) => (
             <RoomCard key={room.id} {...room} />
           ))}

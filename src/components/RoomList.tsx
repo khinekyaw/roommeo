@@ -9,7 +9,7 @@ const RoomList = async ({ searchParams }: { searchParams: any }) => {
   const rooms: RoomCardProps[] = await getAll(buildQueryString(searchParams))
 
   return (
-    <div className='grid grid-cols-3 gap-6'>
+    <div className='grid lg:grid-cols-3 gap-6'>
       {rooms.map((room) => (
         <RoomCard key={room.id} {...room} />
       ))}

@@ -17,7 +17,7 @@ const Rooms = ({
   return (
     <Section>
       <div className='pt-12 pb-12 min-h-screen'>
-        <h1 className='font-bold text-4xl mb-7'>Find a Room</h1>
+        <h1 className='font-bold text-2xl lg:text-4xl mb-7'>Find Rooms</h1>
 
         <div className='mb-12'>
           <RoomFilter searchParams={searchParams} />

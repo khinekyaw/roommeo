@@ -36,7 +36,6 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
   }
 
   useEffect(() => {
-    // console.log('Effect')
     setLoading(false)
     return () => {
       setLoading(false)
@@ -44,14 +43,17 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
   }, [searchParams])
 
   return (
-    <form className='flex gap-x-4' onSubmit={handleSubmit(onSubmit)}>
-      <div className='flex gap-2 flex-1 flex-wrap'>
+    <form
+      className='flex lg:flex-row flex-col gap-4'
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <div className='flex flex-row gap-2 flex-1 flex-wrap'>
         <Input
           size='sm'
           variant='bordered'
           type='text'
           label='Title or street'
-          className='max-w-[9rem] bg-white'
+          className='lg:max-w-[9rem] bg-white'
           color='secondary'
           {...register('search')}
         />
@@ -59,7 +61,7 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           size='sm'
           variant='bordered'
           label='City'
-          className='bg-white max-w-[9rem]'
+          className='bg-white lg:max-w-[9rem]'
           color='secondary'
           {...register('city')}
         >
@@ -73,7 +75,7 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           size='sm'
           variant='bordered'
           label='Township'
-          className='bg-white max-w-[9rem]'
+          className='bg-white lg:max-w-[9rem]'
           color='secondary'
           {...register('township')}
         >
@@ -87,7 +89,7 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           size='sm'
           variant='bordered'
           label='Property type'
-          className='bg-white max-w-[9rem]'
+          className='bg-white lg:max-w-[9rem]'
           color='secondary'
           {...register('property_type')}
         >
@@ -101,7 +103,7 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           size='sm'
           variant='bordered'
           label='Price (From)'
-          className='bg-white max-w-[8rem]'
+          className='bg-white lg:max-w-[8rem] flex-1 lg:flex-auto'
           color='secondary'
           {...register('price_from')}
         >
@@ -115,7 +117,7 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           size='sm'
           variant='bordered'
           label='Price (To)'
-          className='bg-white max-w-[8rem]'
+          className='bg-white lg:max-w-[8rem] flex-1 lg:flex-auto'
           color='secondary'
           {...register('price_to')}
         >

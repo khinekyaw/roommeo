@@ -19,7 +19,7 @@
     "eslint-config-next": "13.4.19",
     "framer-motion": "^10.16.4",
     "lodash": "^4.17.21",
-    "next": "13.4.19",
+    "next": "^13.4.19",
     "next-usequerystate": "^1.8.0",
     "nextjs-toploader": "^1.4.2",
     "postcss": "8.4.29",

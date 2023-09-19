@@ -7,7 +7,7 @@ import Section from './Section'
 
 const Features = () => {
   return (
-    <div className='bg-white w-full py-12'>
+    <div className='bg-white w-full py-16'>
       <Section>
         <div className='grid grid-rows-2 grid-cols-12 gap-5'>
           <Card

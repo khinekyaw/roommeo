@@ -1,11 +1,10 @@
 import React, { Suspense } from 'react'
 
-import { Pagination } from '@nextui-org/pagination'
-
 import RoomFilter from '@/components/RoomFilter'
 import Section from '@/components/Section'
 
 import RoomList from '@/components/RoomList'
+import RoomListLoading from '@/components/RoomListLoading'
 
 const Rooms = ({
   params,
@@ -23,19 +22,11 @@ const Rooms = ({
           <RoomFilter searchParams={searchParams} />
         </div>
 
-        <div className='mb-12'>
-          <Suspense fallback={<p>Loading...</p>}>
+        <div className='mb-8'>
+          <Suspense fallback={<RoomListLoading />}>
             <RoomList searchParams={searchParams} />
           </Suspense>
         </div>
-
-        <Pagination
-          variant='bordered'
-          color='secondary'
-          showControls
-          total={10}
-          initialPage={1}
-        />
       </div>
     </Section>
   )

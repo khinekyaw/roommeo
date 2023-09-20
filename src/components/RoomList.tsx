@@ -3,11 +3,10 @@ import React from 'react'
 import RoomCard, { RoomCardProps } from './RoomCard'
 import { Pagination } from '@nextui-org/pagination'
 
-import { getAll } from '@/lib/fetch/rooms'
-import { buildQueryString } from '@/lib/utils'
+import { getRooms } from '@/lib/fetch/rooms'
 
 const RoomList = async ({ searchParams }: { searchParams: any }) => {
-  const rooms: RoomCardProps[] = await getAll(buildQueryString(searchParams))
+  const rooms: RoomCardProps[] = await getRooms(searchParams)
 
   return (
     <>

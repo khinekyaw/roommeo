@@ -49,10 +49,34 @@ const rooms = [
     price: 200000,
     image: '/images/2.webp',
   },
+  {
+    id: '7',
+    slug: 'room-1',
+    title: 'Room to share',
+    location: '123/abc Hlaing, Yangon',
+    price: 200000,
+    image: '/images/1.webp',
+  },
+  {
+    id: '8',
+    slug: 'room-2',
+    title: 'A room near downtown',
+    location: '123/abc Hlaing, Yangon',
+    price: 300000,
+    image: '/images/2.webp',
+  },
+  {
+    id: '9',
+    slug: 'room-3',
+    title: 'A room near downtown',
+    location: '123/abc Hlaing, Yangon',
+    price: 200000,
+    image: '/images/3.webp',
+  },
 ]
 
 export function GET(request: NextRequest) {
-  console.log('->hit fetch room-list')
+  // console.log('->hit fetch room-list')
 
   const search = request.nextUrl.searchParams.get('search')
 

@@ -1,7 +1,11 @@
+import { buildQueryString } from '../utils'
+
 //
 const URL_SEGMENT = 'rooms'
 
-export const getAll = async (queryString = '') => {
+export const getRooms = async (searchParams = '') => {
+  const queryString = buildQueryString(searchParams)
+
   const res = await fetch(
     `${process.env.API_URL}/${URL_SEGMENT}${
       queryString ? `?${queryString}` : ''

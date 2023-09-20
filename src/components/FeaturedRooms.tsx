@@ -5,11 +5,11 @@ import Link from 'next/link'
 import RoomCard, { RoomCardProps } from './RoomCard'
 import { IoArrowForward } from 'react-icons/io5'
 
-import { getAll } from '@/lib/fetch/rooms'
+import { getRooms } from '@/lib/fetch/rooms'
 import Section from './Section'
 
 const FeaturedRooms = async () => {
-  const rooms: RoomCardProps[] = await getAll()
+  const rooms: RoomCardProps[] = await getRooms()
 
   return (
     <Section>

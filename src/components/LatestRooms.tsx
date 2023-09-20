@@ -2,12 +2,12 @@ import React from 'react'
 import Link from 'next/link'
 
 import RoomCard, { RoomCardProps } from './RoomCard'
-import { getAll } from '@/lib/fetch/rooms'
+import { getRooms } from '@/lib/fetch/rooms'
 import { Button } from '@nextui-org/button'
 import { IoArrowForward } from 'react-icons/io5'
 
 const LatestRooms = async () => {
-  const rooms: RoomCardProps[] = await getAll()
+  const rooms: RoomCardProps[] = await getRooms()
 
   return (
     <div>

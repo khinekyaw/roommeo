@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+import { wait } from '@/lib/utils'
+
 const rooms = [
   {
     id: '1',
@@ -75,9 +77,7 @@ const rooms = [
   },
 ]
 
-export function GET(request: NextRequest) {
-  // console.log('->hit fetch room-list')
-
+export async function GET(request: NextRequest) {
   const search = request.nextUrl.searchParams.get('search')
 
   return NextResponse.json(search ? rooms.slice(0, 2).reverse() : rooms)

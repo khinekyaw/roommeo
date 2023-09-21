@@ -1,9 +1,9 @@
 import React from 'react'
 
 import RoomCard, { RoomCardProps } from './RoomCard'
-import { Pagination } from '@nextui-org/pagination'
 
 import { getRooms } from '@/lib/fetch/rooms'
+import LoosePagination from './LoosePagination'
 
 const RoomList = async ({ searchParams }: { searchParams: any }) => {
   const rooms: RoomCardProps[] = await getRooms(searchParams)
@@ -15,13 +15,7 @@ const RoomList = async ({ searchParams }: { searchParams: any }) => {
           <RoomCard key={room.id} {...room} />
         ))}
       </div>
-      <Pagination
-        variant='bordered'
-        color='secondary'
-        showControls
-        total={10}
-        initialPage={1}
-      />
+      <LoosePagination />
     </>
   )
 }

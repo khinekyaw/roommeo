@@ -1,10 +1,13 @@
 'use client'
 import React from 'react'
 import { Pagination } from '@nextui-org/pagination'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 const LoosePagination = () => {
   const router = useRouter()
+  const search = useSearchParams()
+
+  const currentPage = parseInt(search.get('page') || '1')
 
   return (
     <Pagination
@@ -13,6 +16,7 @@ const LoosePagination = () => {
       showControls
       total={10}
       initialPage={1}
+      page={currentPage}
       onChange={(currentPage) => router.push(`/rooms?page=${currentPage}`)}
     />
   )

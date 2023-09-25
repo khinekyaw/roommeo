@@ -80,5 +80,6 @@ const rooms = [
 export async function GET(request: NextRequest) {
   const search = request.nextUrl.searchParams.get('search')
 
+  // await wait(2000)
   return NextResponse.json(search ? rooms.slice(0, 2).reverse() : rooms)
 }

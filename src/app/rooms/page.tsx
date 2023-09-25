@@ -5,6 +5,7 @@ import Section from '@/components/Section'
 
 import RoomList from '@/components/RoomList'
 import RoomListLoading from '@/components/RoomListLoading'
+import { buildQueryString } from '@/lib/utils'
 
 const Rooms = ({
   params,
@@ -23,7 +24,10 @@ const Rooms = ({
         </div>
 
         <div className='mb-8'>
-          <Suspense fallback={<RoomListLoading />}>
+          <Suspense
+            key={buildQueryString(searchParams)}
+            fallback={<RoomListLoading />}
+          >
             <RoomList searchParams={searchParams} />
           </Suspense>
         </div>

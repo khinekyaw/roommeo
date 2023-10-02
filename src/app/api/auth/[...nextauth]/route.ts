@@ -1,5 +1,10 @@
 import NextAuth, { NextAuthOptions } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
+import axios from 'axios'
+
+interface DRFRespons {
+  access: string
+}
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -9,16 +14,39 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    async jwt({ token, account }) {
-      if (account) {
-        token.accessToken = account.access_token
+    async signIn({ user, account, profile }) {
+      if (account?.provider === 'google') {
+        const { access_token, id_token } = account
+
+        try {
+          const res = await axios.post<DRFRespons>(
+            'http://127.0.0.1:8000/api/social/login/google/',
+            {
+              access_token,
+              id_token,
+            }
+          )
+
+          const { access } = res.data
+          user.accessToken = access
+
+          return true
+        } catch (error) {
+          return false
+        }
       }
-      console.log('jwt-callback:', token, account)
-      return token
+
+      return false
     },
-    async session({ session, token, user }) {
-      console.log('session-callback:', session, token, user)
+    async session({ session, user, token }) {
+      session.accessToken = token.accessToken
       return session
+    },
+    async jwt({ token, user, account, profile }) {
+      if (user) {
+        token.accessToken = user.accessToken
+      }
+      return token
     },
   },
 }

@@ -7,8 +7,6 @@ import { Button } from '@nextui-org/button'
 const GoogleAuthButton = () => {
   const { data } = useSession()
 
-  console.log('GoogleAuthBtn:', data)
-
   return (
     <div>
       {data ? (

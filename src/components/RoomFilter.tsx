@@ -10,7 +10,7 @@ import { IoSearch } from 'react-icons/io5'
 import _ from 'lodash'
 
 import { buildQueryString } from '@/lib/utils'
-import { CITIES, PRICES, PROPERTY_TYPES } from '@/data/inputs'
+import { CITIES, PRICES, PROPERTY_TYPES } from '@/lib/data/inputs'
 
 const RoomFilter = ({ searchParams }: { searchParams: any }) => {
   const router = useRouter()

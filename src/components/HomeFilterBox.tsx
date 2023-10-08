@@ -4,7 +4,7 @@ import React from 'react'
 import { Card, CardBody } from '@nextui-org/card'
 import { Select, SelectItem } from '@nextui-org/select'
 import { useForm } from 'react-hook-form'
-import { CITIES, PRICES } from '@/data/inputs'
+import { CITIES, PRICES } from '@/lib/data/inputs'
 import { Button } from '@nextui-org/button'
 
 const HomeFilterBox = () => {

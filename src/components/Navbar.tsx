@@ -15,6 +15,7 @@ import { Button } from '@nextui-org/button'
 import NavLink from './NavLink'
 import Logo from './Logo'
 import LangSwitcher from './LangSwitcher'
+// import { ThemeSwitcher } from './ThemeSwitcher'
 
 interface NavbarProps {
   home: string
@@ -50,6 +51,7 @@ export default function Navbar({ home, rooms, login, signUp }: NavbarProps) {
       <NavbarContent justify='end'>
         <NavbarItem className='hidden lg:flex'>
           <LangSwitcher />
+          {/* <ThemeSwitcher /> */}
         </NavbarItem>
         <NavbarItem className='hidden lg:flex'>
           <Button as={Link} href='/login' color='secondary' variant='faded'>

@@ -12,8 +12,9 @@ const GoogleAuthButton = () => {
     <div>
       {data ? (
         <>
-          <p>Sign In as {data.user?.name}</p>
-          <Button color='danger' onPress={() => signOut()}>
+          <p className='mb-2'>Logged In as {data.user?.name}</p>
+          <p className='mb-5'>Comming soon...</p>
+          <Button color='warning' onPress={() => signOut()}>
             Logout
           </Button>
         </>

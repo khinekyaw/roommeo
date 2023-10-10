@@ -4,12 +4,11 @@ import { notFound } from 'next/navigation'
 import { Inter } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
 
-import { Providers } from './providers'
 import Layout from '../../components/Layout'
+import { Providers } from './providers'
+import { locales } from '@/navigation'
 
 const inter = Inter({ subsets: ['latin'] })
-
-const locales = ['en', 'mm']
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,7 +20,7 @@ export default function RootLayout({
   params: { locale },
 }: {
   children: React.ReactNode
-  params: { locale: 'en' | 'mm' }
+  params: { locale: string }
 }) {
   const isValidLocale = locales.some((cur) => cur === locale)
   if (!isValidLocale) notFound()

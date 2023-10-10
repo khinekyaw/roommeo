@@ -66,12 +66,16 @@ export default function Navbar({ home, rooms, login, signUp }: NavbarProps) {
       </NavbarContent>
 
       <NavbarMenu>
-        <NavbarItem>
-          <Link href='/'>{home}</Link>
-        </NavbarItem>
         <NavbarMenuItem>
+          <Link href='/'>{home}</Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem className='mb-5'>
           <Link href='/rooms'>{rooms}</Link>
         </NavbarMenuItem>
+        <Button as={Link} href='/login' color='secondary' variant='faded'>
+          {login}
+        </Button>
+        <LangSwitcher />
       </NavbarMenu>
     </NextNavbar>
   )

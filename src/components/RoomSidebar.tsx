@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { Card } from '@nextui-org/card'
-import { Button } from '@nextui-org/button'
+
+import ContactButton from './ContactButton'
 
 const RoomSidebar = () => {
   return (
@@ -10,7 +11,7 @@ const RoomSidebar = () => {
         <h3 className='font-bold text-2xl'>Ks 200,000</h3>
         <span>per month</span>
       </div>
-      <Button color='secondary'>Contact Now</Button>
+      <ContactButton />
     </Card>
   )
 }

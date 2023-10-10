@@ -46,7 +46,7 @@ export default function Navbar() {
           </Button>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} href='#' color='secondary'>
+          <Button as={Link} href='/register' color='secondary'>
             Sign Up
           </Button>
         </NavbarItem>

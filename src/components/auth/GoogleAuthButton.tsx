@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { signIn, signOut, useSession } from 'next-auth/react'
+import { FcGoogle } from 'react-icons/fc'
 
 import { Button } from '@nextui-org/button'
 
@@ -17,8 +18,14 @@ const GoogleAuthButton = () => {
           </Button>
         </>
       ) : (
-        <Button color='primary' onPress={() => signIn()}>
-          Sign In
+        <Button
+          color='secondary'
+          className='w-full'
+          size='lg'
+          onPress={() => signIn('google')}
+        >
+          Log in with Google
+          <FcGoogle className='text-xl' />
         </Button>
       )}
     </div>

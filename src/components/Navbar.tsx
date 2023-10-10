@@ -41,7 +41,7 @@ export default function Navbar() {
       </NavbarContent>
       <NavbarContent justify='end'>
         <NavbarItem className='hidden lg:flex'>
-          <Button as={Link} href='#' color='secondary' variant='faded'>
+          <Button as={Link} href='/login' color='secondary' variant='faded'>
             Login
           </Button>
         </NavbarItem>

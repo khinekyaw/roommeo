@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react'
 import Link from 'next/link'
 import { NavbarItem } from '@nextui-org/navbar'
 
-import { usePathname } from 'next/navigation'
+import { usePathname } from '@/navigation'
 
 export interface NavLinkProps {
   children: ReactNode
@@ -12,6 +12,7 @@ export interface NavLinkProps {
 
 const NavLink = ({ children, href }: NavLinkProps) => {
   const pathname = usePathname()
+
   return (
     <NavbarItem isActive={pathname === href}>
       <Link color='foreground' href={href}>

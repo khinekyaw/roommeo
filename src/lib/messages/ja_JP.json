@@ -1,5 +1,11 @@
 {
   "home": {
     "headline": "理想的な物件を見つける 住みたくなる場所"
+  },
+  "navigation": {
+    "home": "起源",
+    "rooms": "客室",
+    "login": "ログイン",
+    "register": "登録"
   }
 }

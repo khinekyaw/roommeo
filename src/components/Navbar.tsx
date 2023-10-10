@@ -16,13 +16,19 @@ import NavLink from './NavLink'
 import Logo from './Logo'
 import LangSwitcher from './LangSwitcher'
 
-export default function Navbar() {
+interface NavbarProps {
+  home: string
+  rooms: string
+  login: string
+  signUp: string
+}
+
+export default function Navbar({ home, rooms, login, signUp }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   return (
     <NextNavbar
       isBlurred={false}
-      // isBordered={true}
       classNames={{
         wrapper: 'max-w-6xl px-10',
         content: 'flex-1',
@@ -38,8 +44,8 @@ export default function Navbar() {
         </Link>
       </NavbarBrand>
       <NavbarContent className='hidden sm:flex gap-4' justify='center'>
-        <NavLink href='/'>Home</NavLink>
-        <NavLink href='/rooms'>Rooms</NavLink>
+        <NavLink href='/'>{home}</NavLink>
+        <NavLink href='/rooms'>{rooms}</NavLink>
       </NavbarContent>
       <NavbarContent justify='end'>
         <NavbarItem className='hidden lg:flex'>
@@ -47,22 +53,22 @@ export default function Navbar() {
         </NavbarItem>
         <NavbarItem className='hidden lg:flex'>
           <Button as={Link} href='/login' color='secondary' variant='faded'>
-            Login
+            {login}
           </Button>
         </NavbarItem>
         <NavbarItem>
           <Button as={Link} href='/register' color='secondary'>
-            Sign Up
+            {signUp}
           </Button>
         </NavbarItem>
       </NavbarContent>
 
       <NavbarMenu>
         <NavbarItem>
-          <Link href='/'>Home</Link>
+          <Link href='/'>{home}</Link>
         </NavbarItem>
         <NavbarMenuItem>
-          <Link href='/rooms'>Rooms</Link>
+          <Link href='/rooms'>{rooms}</Link>
         </NavbarMenuItem>
       </NavbarMenu>
     </NextNavbar>

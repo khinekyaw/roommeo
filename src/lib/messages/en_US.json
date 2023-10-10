@@ -1,5 +1,11 @@
 {
   "home": {
     "headline": "Find a perfect property Where you'll love to live"
+  },
+  "navigation": {
+    "home": "Home",
+    "rooms": "Rooms",
+    "login": "Login",
+    "register": "Register"
   }
 }

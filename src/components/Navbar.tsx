@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import {
   Navbar as NextNavbar,
@@ -25,7 +25,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({ home, rooms, login, signUp }: NavbarProps) {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <NextNavbar
@@ -34,6 +34,8 @@ export default function Navbar({ home, rooms, login, signUp }: NavbarProps) {
         wrapper: 'max-w-6xl px-10',
         content: 'flex-1',
       }}
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarMenuToggle
         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -67,10 +69,14 @@ export default function Navbar({ home, rooms, login, signUp }: NavbarProps) {
 
       <NavbarMenu>
         <NavbarMenuItem>
-          <Link href='/'>{home}</Link>
+          <Link href='/' onClick={() => setIsMenuOpen(false)}>
+            {home}
+          </Link>
         </NavbarMenuItem>
         <NavbarMenuItem className='mb-5'>
-          <Link href='/rooms'>{rooms}</Link>
+          <Link href='/rooms' onClick={() => setIsMenuOpen(false)}>
+            {rooms}
+          </Link>
         </NavbarMenuItem>
         <Button as={Link} href='/login' color='secondary' variant='faded'>
           {login}

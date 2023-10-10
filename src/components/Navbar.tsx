@@ -14,6 +14,7 @@ import { Button } from '@nextui-org/button'
 
 import NavLink from './NavLink'
 import Logo from './Logo'
+import LangSwitch from './LangSwitch'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
@@ -24,6 +25,7 @@ export default function Navbar() {
       // isBordered={true}
       classNames={{
         wrapper: 'max-w-6xl px-10',
+        content: 'flex-1',
       }}
     >
       <NavbarMenuToggle
@@ -40,6 +42,9 @@ export default function Navbar() {
         <NavLink href='/rooms'>Rooms</NavLink>
       </NavbarContent>
       <NavbarContent justify='end'>
+        <NavbarItem className='hidden lg:flex'>
+          <LangSwitch />
+        </NavbarItem>
         <NavbarItem className='hidden lg:flex'>
           <Button as={Link} href='/login' color='secondary' variant='faded'>
             Login

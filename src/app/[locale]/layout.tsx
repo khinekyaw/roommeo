@@ -1,12 +1,15 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import { Inter } from 'next/font/google'
 import NextTopLoader from 'nextjs-toploader'
 
 import { Providers } from './providers'
-import Layout from '../components/Layout'
+import Layout from '../../components/Layout'
 
 const inter = Inter({ subsets: ['latin'] })
+
+const locales = ['en', 'mm']
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,11 +18,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode
+  params: { locale: 'en' | 'mm' }
 }) {
+  const isValidLocale = locales.some((cur) => cur === locale)
+  if (!isValidLocale) notFound()
+
   return (
-    <html lang='en'>
+    <html lang={locale}>
       <body className={inter.className}>
         <NextTopLoader color={'#ff8b46'} showSpinner={false} />
         <Providers>

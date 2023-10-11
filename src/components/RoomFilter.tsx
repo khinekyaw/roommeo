@@ -53,16 +53,14 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           variant='bordered'
           type='text'
           label='Title or street'
-          className='lg:max-w-[9rem] bg-white'
-          color='secondary'
+          className='lg:max-w-[9rem]'
           {...register('search')}
         />
         <Select
           size='sm'
           variant='bordered'
           label='City'
-          className='bg-white lg:max-w-[9rem]'
-          color='secondary'
+          className='lg:max-w-[9rem]'
           {...register('city')}
         >
           {CITIES.map((city) => (
@@ -75,8 +73,7 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           size='sm'
           variant='bordered'
           label='Township'
-          className='bg-white lg:max-w-[9rem]'
-          color='secondary'
+          className='lg:max-w-[9rem]'
           {...register('township')}
         >
           {CITIES.map((city) => (
@@ -89,8 +86,7 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           size='sm'
           variant='bordered'
           label='Property type'
-          className='bg-white lg:max-w-[9rem]'
-          color='secondary'
+          className='lg:max-w-[9rem]'
           {...register('property_type')}
         >
           {PROPERTY_TYPES.map((property) => (
@@ -103,8 +99,7 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           size='sm'
           variant='bordered'
           label='Price (From)'
-          className='bg-white lg:max-w-[8rem] flex-1 lg:flex-auto'
-          color='secondary'
+          className='lg:max-w-[8rem] flex-1 lg:flex-auto'
           {...register('price_from')}
         >
           {PRICES.map((price) => (
@@ -117,8 +112,7 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
           size='sm'
           variant='bordered'
           label='Price (To)'
-          className='bg-white lg:max-w-[8rem] flex-1 lg:flex-auto'
-          color='secondary'
+          className='lg:max-w-[8rem] flex-1 lg:flex-auto'
           {...register('price_to')}
         >
           {PRICES.map((price) => (
@@ -131,10 +125,10 @@ const RoomFilter = ({ searchParams }: { searchParams: any }) => {
       <div>
         <Button
           startContent={loading ? null : <IoSearch />}
-          color='secondary'
           size='lg'
           type='submit'
           isLoading={loading}
+          color='secondary'
         >
           Search
         </Button>

@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+import Link from 'next-intl/link'
 
 import { Image as NextUiImage } from '@nextui-org/image'
 import { Button } from '@nextui-org/button'
@@ -79,9 +79,9 @@ const RoomCard: FC<RoomCardProps> = ({
             </div>
           </div>
           <div className='flex w-full justify-between items-center'>
-            <Button as={Link} href={`/rooms/${slug}`} color='secondary'>
-              View Detail
-            </Button>
+            <Link href={`/rooms/${slug}`}>
+              <Button color='secondary'>View Detail</Button>
+            </Link>
             <p className='text-lg lg:text-xl font-bold'>
               Ks{numberWithCommas(price)}
             </p>

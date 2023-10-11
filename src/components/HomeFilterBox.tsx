@@ -1,10 +1,10 @@
 'use client'
 import React from 'react'
+import { useForm } from 'react-hook-form'
 
 import { Card, CardBody } from '@nextui-org/card'
 import { Select, SelectItem } from '@nextui-org/select'
 import { Button } from '@nextui-org/button'
-import { useForm } from 'react-hook-form'
 import { CITIES, PRICES } from '@/lib/data/inputs'
 
 const HomeFilterBox = () => {
@@ -22,7 +22,6 @@ const HomeFilterBox = () => {
           size='sm'
           variant='bordered'
           label='City'
-          className='bg-white'
           color='secondary'
           {...register('city')}
         >
@@ -36,7 +35,6 @@ const HomeFilterBox = () => {
           size='sm'
           variant='bordered'
           label='Township'
-          className='bg-white'
           color='secondary'
           {...register('city')}
         >
@@ -51,7 +49,6 @@ const HomeFilterBox = () => {
             size='sm'
             variant='bordered'
             label='Price (From)'
-            className='bg-white'
             color='secondary'
             {...register('city')}
           >
@@ -65,7 +62,6 @@ const HomeFilterBox = () => {
             size='sm'
             variant='bordered'
             label='Price (To)'
-            className='bg-white'
             color='secondary'
             {...register('city')}
           >

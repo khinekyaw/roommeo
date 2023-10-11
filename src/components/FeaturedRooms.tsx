@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from '@nextui-org/button'
-import Link from 'next/link'
+import Link from 'next-intl/link'
 
 import RoomCard, { RoomCardProps } from './RoomCard'
 import { IoArrowForward } from 'react-icons/io5'
@@ -16,15 +16,15 @@ const FeaturedRooms = async () => {
       <div className='pt-16 mb-20'>
         <div className='flex justify-between mb-8'>
           <h5 className='font-bold text-xl lg:text-3xl'>Featured Rooms</h5>
-          <Button
-            as={Link}
-            variant='light'
-            color='primary'
-            endContent={<IoArrowForward />}
-            href='/rooms?filter=featured'
-          >
-            View All
-          </Button>
+          <Link href='/rooms?filter=featured'>
+            <Button
+              variant='light'
+              color='primary'
+              endContent={<IoArrowForward />}
+            >
+              View All
+            </Button>
+          </Link>
         </div>
         <div className='grid lg:grid-cols-3 gap-6'>
           {rooms.slice(0, 3).map((room) => (

@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from 'next-intl/link'
 
 import RoomCard, { RoomCardProps } from './RoomCard'
 import { getRooms } from '@/lib/fetch/rooms'
@@ -15,15 +15,15 @@ const LatestRooms = async () => {
         <h5 className='font-bold text-lg lg:text-2xl mb-8'>
           Latest Room Listings
         </h5>
-        <Button
-          as={Link}
-          variant='light'
-          color='primary'
-          endContent={<IoArrowForward />}
-          href='/rooms?filter=latest'
-        >
-          View All
-        </Button>
+        <Link href='/rooms?filter=latest'>
+          <Button
+            variant='light'
+            color='primary'
+            endContent={<IoArrowForward />}
+          >
+            View All
+          </Button>
+        </Link>
       </div>
       <div className='grid lg:grid-cols-3 gap-6'>
         {rooms.slice(0, 3).map((room) => (

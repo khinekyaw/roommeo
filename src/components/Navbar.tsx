@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import Link from 'next/link'
+import Link from 'next-intl/link'
 import {
   Navbar as NextNavbar,
   NavbarBrand,

@@ -1,8 +1,8 @@
 'use client'
 import React, { ReactNode } from 'react'
-import Link from 'next/link'
-import { NavbarItem } from '@nextui-org/navbar'
+import Link from 'next-intl/link'
 
+import { NavbarItem } from '@nextui-org/navbar'
 import { usePathname } from '@/navigation'
 
 export interface NavLinkProps {

@@ -1,11 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-
-import { Card, CardBody, CardHeader, CardFooter } from '@nextui-org/card'
-import { Image as NextUiImage } from '@nextui-org/image'
-import { Link as NextUiLink } from '@nextui-org/link'
-import { Divider } from '@nextui-org/divider'
+import { Card, CardHeader, CardFooter } from '@nextui-org/card'
 
 const RoomDetail = () => {
   return (
